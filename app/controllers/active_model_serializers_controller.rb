@@ -10,6 +10,7 @@ class ActiveModelSerializersController < ApplicationController
   end
 
   def sample3
-    @authors = Author.all
+    @book = Book.first
+    render json: @book, root: false, serializer: BookExtendSerializer
   end
 end
